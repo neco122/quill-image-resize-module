@@ -71,6 +71,8 @@ export class Resize extends BaseModule {
     handleMouseup = () => {
         // reset cursor everywhere
         this.setCursor('');
+        // cdn dynamic crop image parameter
+		this.img.src = this.img.src + '?width=' + this.img.width;
         // stop listening for movement and mouseup
         document.removeEventListener('mousemove', this.handleDrag);
         document.removeEventListener('mouseup', this.handleMouseup);
